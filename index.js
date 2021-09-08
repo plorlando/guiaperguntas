@@ -14,6 +14,11 @@ app.get("/perguntar", function(req, res){
     res.render("perguntar")
 })
 
+// recebe infos de um formulário post
+app.post("/salvarpergunta", (req, res) => {
+    res.send("formulário recebido")
+})
+
 app.listen(8080, () => {
     console.log("APP RODANDO")
 })
