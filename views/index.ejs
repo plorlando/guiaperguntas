@@ -2,7 +2,23 @@
 <body>
     <%- include ('partials/navbar.ejs') %>
     <div class="container" id="main-div">
-        <h1>INDEX</h1>
+        <hr>
+        <h2>Perguntas</h2>
+        <hr>
+        <a href="/perguntar" class="btn btn-primary">Perguntar</a>
+        <hr>
+        <% lista_perguntas.forEach(perg => { %>
+        <div class="card">
+            <div class="card-body">
+                <h5><%= perg.titulo %></h5><%= perg.data %>
+            </div>
+            <div class="card-footer">
+                <a href="/pergunta/<%= perg.id %>"><button class="btn btn-primary">Responder</button></a>
+            </div>
+        </div>
+        <p><%= perg.descricao %></p>
+        <% }) %>
+
     </div>
     
 <%- include ('partials/footer.ejs') %>
